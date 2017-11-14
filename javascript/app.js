@@ -1400,11 +1400,14 @@ function calculateLatLong(event){
     var now = new Date();
 	var todayStr = formatDate(now);
 	var tomorrowStr = formatTomorrow(now);
-	var url = 'http://service.globalweathercorp.com/webservices/resources/v2/weatherdatasummary/'+
+	var weatherDataSummaryUrl = 'http://service.globalweathercorp.com/webservices/resources/v2/weatherdatasummary/'+
 	latitude+'/'+longitude+'/'+todayStr+'-'+tomorrowStr+
-	'?gwctoken=6EEA6EEBDDEAA461688F1B11DF66B135&format=json';
+  '?gwctoken=6EEA6EEBDDEAA461688F1B11DF66B135&format=json';
+  
+  var weatherDataUrl = "http://service.globalweathercorp.com/webservices/resources/v2/weatherdata/" + latitude + "/" + longitude + "/" + todayStr + "-" + tomorrowStr + "timeinterval={1}?gwctoken=E9F650D5CDEABE6C031EEEA0766FFC63"
 
-	$.getJSON(url, function (data) {
+  
+	$.getJSON(u, function (data) {
 
 		if (data.points != null) {
 
@@ -1445,9 +1448,20 @@ function calculateLatLong(event){
                     }
 				}
 			}
-		}
-	});
+    }
+    
+  });
+  
+  $.getJSON(weatherDataUrl, function (data) {
+    console.log(data); 
+  })
 
+   var locationLoookupUrl = "http://locationiq.org/v1/reverse.php?format=json&key=94a043beaa6058&lat=" + latitude + "&lon=" + longitude;
+
+   /*$.getJSON(locationLoookupUrl, function (data) {
+    console.log(data); 
+  })*/
+  
    var latitudeInput = document.getElementById('latitude-reader');
    latitudeInput.innerHTML = "lat: " + latitude;
 
