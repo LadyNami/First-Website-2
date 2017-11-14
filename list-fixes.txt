@@ -1,0 +1,9 @@
+Image in map
+24hour forecast
+our services text
+space da buttons
+who we are image
+More about us button centered
+Foundation forecast services reduce text size 
+Foundation forecast services change large wx panels same as medium wx min width
+Our use-case panels reduce size

@@ -1,0 +1,402 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+
+	    <title>Hello World!</title>
+		<link rel="stylesheet" href="css/app.css">
+		<link rel="stylesheet" href="css/media-query.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+		
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="super-container">
+				<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
+					<a class="navbar-brand" href="#">
+						<div class="menu-logo"></div>
+					</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" style="justify-content:flex-end;" id="navbarNavDropdown">
+						<ul class="navbar-nav">
+							<li class="nav-item active">
+								<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									About
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+									<a class="dropdown-item" href="#">Management</a>
+									<a class="dropdown-item" href="#">In the News</a>
+									<a class="dropdown-item" href="#">Our Customers</a>
+									<a class="dropdown-item" href="#">Partners</a>
+									<a class="dropdown-item" href="#">Careers</a>
+								</div>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Services
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+									<a class="dropdown-item" href="#">Overview</a>
+									<a class="dropdown-item" href="#">SensoredWX</a>
+									<a class="dropdown-item" href="#">PointWX</a>
+									<a class="dropdown-item" href="#">RoadWX</a>
+									<a class="dropdown-item" href="#">WindWX</a>
+									<a class="dropdown-item" href="#">SolarWX</a>
+								</div>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Technology
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+									<a class="dropdown-item" href="#">Core Technology</a>
+									<a class="dropdown-item" href="#">App Support and Dev Tools</a>
+									<a class="dropdown-item" href="#">FAQ</a>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Getting Started</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Contact</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<div class="second-row">
+					<div class="worldmap-flex">
+						<div class="worldmap-title">
+							Weather for the Connected World<sup class="tm">TM</sup>
+						</div>
+						<div class="worldmap-holder">
+							<div class="worldmap-container" onclick="calculateLatLong(event)">
+								<div id="worldmap"></div>
+							</div>
+						</div>
+					</div>
+					<div class="forecast-image">
+						<div class="forecast">
+							<input id="metric-or-imperial" style="display: none" value="imperial">
+							<div class="forecast-container">
+								24 HOUR FORECAST
+							</div>
+							<div class="inner-forecast-container">
+								<div class="left-forecast-container">
+									<div id="latitude-reader">
+										lat:
+									</div>
+								</div>
+								<div class="right-forecast-container">
+									<div id="longitude-reader">
+										long:
+									</div>
+								</div>
+							</div>
+							<div class="forecast-container">
+									CURRENT CONDITIONS
+								</div>
+							<div class="inner-forecast-container">
+								<div id="weather-forecast-id"></div>
+							</div>
+							<div class="inner-forecast-container">
+								<div class="left-forecast-container">
+									<div id="high-temperature"></div>
+								</div>
+								<div class="right-forecast-container">
+									<div id="temp-type-high">C HI</div>
+								</div>
+							</div>
+							<div class="inner-forecast-container">
+								<div class="left-forecast-container">
+									<div id="low-temperature"></div>
+								</div>
+								<div class="right-forecast-container">
+									<div id="temp-type-low"> C LO</div>
+								</div>
+							</div>
+							<div class="inner-forecast-container">
+								<div class="left-forecast-container">
+									<div id="precipitation"></div>
+								</div>
+								<div class="right-forecast-container">
+									% precip
+								</div>
+							</div>
+							<div class="inner-forecast-container">
+								<div class="left-forecast-container">
+									<div id="wind-speed"></div>
+								</div>
+								<div class="right-forecast-container">
+									<div id="wind-speed-type">KPH wind</div>
+								</div>
+							</div>
+							<div class="inner-forecast-container">
+								<div id="convert-to-button" onclick="changeImperialOrMetric()">Convert to Imperial</div>
+							</div>
+						</div>
+					</div>		
+				</div>
+				<div class="third-row">
+					<div class="our-services-header">Our Services</div>
+					<div class="our-service-buttons">
+						<div class="our-service-button">
+							<div class="button-border">
+								<div class="sensor-button"></div>
+							</div>
+						</div>
+						<div class="our-service-button">
+							<div class="button-border">
+								<div class="point-button"></div>
+							</div>
+						</div>
+						<div class="our-service-button">
+							<div class="button-border">
+								<div class="road-button"></div>
+							</div>
+						</div>
+						<div class="our-service-button">
+							<div class="button-border">
+								<div class="wind-button"></div>
+							</div>
+						</div>
+						<div class="our-service-button">
+							<div class="button-border">
+								<div class="solar-button"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="foundational-forecast-services">
+					<div class="foundational-forecast-title">
+						<h1>Foundational Forecast Services</h1>
+						<div class="text-wrapper">
+                        	<p>GWC’s two standard forecast services provide global coverage and are designed to serve most users with minimal customization.</p>
+                    	</div>
+					</div>
+					<div class="foundational-forecast-pdf-download">
+						<div class="pdf-download-container">
+							<p>PDF Download</p>
+						</div>
+					</div>
+					<div class="foundational-wx-elements">
+						<div class="wx-panels-large">
+							<div class="panel-sensor-image"></div>
+							<hr width="70%">
+							<div class="text-wrapper">
+								<p>SensorWXSM provides tuned forecasts at weather station (sensor) locations. A tuned forecast represents the best match to both historic and current conditions as measured by that sensor. Forecasts for thousands of publicly-available sensors (such as METARS) are currently accessible.</p>
+							</div>
+							<hr width="70%">
+						</div>
+						<div class="wx-panels-large">
+							<div class="panel-point-image"></div>
+							<hr width="70%">
+							<div class="text-wrapper">
+								<p>PointWX provides forecasts at arbitrary locations – since weather stations are not always present where people need forecasts. To do this, we generate a gridded forecast that can be intelligently interpolated to provide a forecast at any requested location.</p>
+							</div>
+							<hr width="70%">
+						</div>
+					</div>
+					<div class="foundational-forecast-title">
+						<h1>Specialized Forecast Services</h1>
+						<div class="text-wrapper">
+                        	<p>GWC’s specialized forecasts are derived from SensorWX and PointWX</p>
+                    	</div>
+					</div>
+					<div class="foundational-wx-elements">
+						<div class="wx-panels-medium">
+							<div class="panel-road-image"></div>
+							<hr width="70%">
+							<div class="text-wrapper">
+								<p>RoadWX provides forecasts of road surface conditions and corresponding weather for any road location, worldwide. Forecasts are hourly out to 48 hours, with spatial resolution of 1 km along any roadway.</p>
+							</div>
+							<hr width="70%">
+						</div>
+						<div class="wx-panels-medium">
+							<div class="panel-wind-image"></div>
+							<hr width="70%">
+							<div class="text-wrapper">
+								<p>WindWX is a precision wind energy forecast service, updated every 15 minutes out to 168 hours. It offers farm-level optimization and aggregation to any level, such as by node or ISO to provide situational awareness of the entire portfolio.</p>
+							</div>
+							<hr width="70%">
+						</div>
+						<div class="wx-panels-medium">
+							<div class="panel-solar-image"></div>
+							<hr width="70%">
+							<div class="text-wrapper">
+								<p>SolarWX provides hourly forecasts of centralized or distributed solar power, whether observational data is available or not. Farm-level forecasts are aggregated to the regional level to provide higher-level situational awareness of the entire portfolio.</p>
+							</div>
+							<hr width="70%">
+						</div>
+					</div>
+				</div>
+				<div class="who-we-are">
+                    <div class="who-we-are-image-container">
+                        <div class="image"></div>
+                    </div>
+                    <div class="who-we-are-text">
+                        <h1>Who We Are</h1>
+						<div class="text-wrapper">
+                        	<p>GWC is a weather data services company that is commercializing the world’s best weather forecasting technologies.</p>
+                        </div>
+						<h1>Why We Are Different</h1>
+						<div class="text-wrapper">
+                        	<p>To serve a world connected by information, Global Weather Corporation® (GWC) is transforming how weather forecasts are created, delivered, and used. GWC’s artificial intelligence systems process the world’s best weather data into forecasts that have been independently validated as the most accurate available anywhere. Our customers are large and small companies globally; we improve how they serve their customers, and make their operations more effective.</p>
+                    	</div>
+					</div>
+                    <div class="who-we-are-button">
+                        <h1>More about us</h1>
+                    </div>
+				</div>
+				<div class="use-cases">
+					<div class="header-image">
+						<h1>Our Customers</h1>
+						<h3>See How We Can Help You</h3>
+					</div>
+					<div class="companies-use-cases-container">
+						<div class="company-panels">
+							<div class="use-case-images">
+								<img src="./images/earth-networks.png">
+							</div>
+							<hr width="70%">
+							<div class="text-wrapper">
+								<p>Earth NetworksTM with more than 20 years of expertise as a weather services provider, built and operates an extensive weather observation network; including over 10,000 proprietary weather stations and lightning sensors around the globe. Starting in 2012, they began using GWC forecasts so they can offer a full portfolio of weather observation and forecast services anywhere in the world to a broad range of industries such as airport operation, broadcast, energy, insurance, and parks & recreation.</p>
+							</div>
+							<hr width="70%">
+						</div>
+						<div class="company-panels">
+							<div class="use-case-images">
+								<img src="./images/yahoologo-sml.png">
+							</div>
+							<hr width="70%">
+							<div class="text-wrapper">
+								<p>Yahoo, a wholly owned subsidiary of Verizon, has the 6th most visited web portal in the world and supports a billion active web and mobile users. In 2014, GWC became the weather data supplier to Yahoo worldwide operations, providing a feed of global weather forecast data and imagery, updated every 15 minutes and accessible to all Yahoo users.</p>
+							</div>
+							<hr width="70%">
+						</div>
+						<div class="company-panels">
+							<div class="use-case-images">
+								<img src="./images/xcellogo.png">
+							</div>
+							<hr width="70%">
+							<div class="text-wrapper">
+								<p>Xcel Energy is the largest wind power provider in the US. Since 2011, GWC has provided the wind power forecasting services for Xcel's three operating regions: Northern States Power, Public Service of Colorado, and Southern Power Service. Xcel has saved over $66 million due to improved accuracy since deployment as compared to their previous forecast.</p>
+							</div>
+							<hr width="70%">
+						</div>
+					</div>
+					<div class="companies-use-cases-container">
+						<div class="company-panels">
+							<div class="use-case-images">
+								<img src="./images/inrixlogo.jpg">
+							</div>
+							<hr width="70%">
+							<div class="text-wrapper">
+								<p>INRIX provides real-time road traffic analytics to numerous world-class companies and public agencies across 60 countries. Since 2015, GWC's road weather forecasts, available every half kilometer along all major road networks in North America and Europe, have enabled INRIX alerting solutions that support driver safety and efficiency.</p>
+							</div>
+							<hr width="70%">
+						</div>
+						<div class="company-panels">
+							<div class="use-case-images">
+								<img src="./images/planalyticslogo.png">
+							</div>
+							<hr width="70%">
+							<div class="text-wrapper">
+								<p>Planalytics helps industries understand how weather impacts their supply chain management and bottom-line. Since 2013, GWC's forecast services have helped Planalytics serve weather intelligence to major corporations through-out the world, such as Coca Cola, Johnson and Johnson, and Bloomberg.</p>
+							</div>
+							<hr width="70%">
+						</div>
+						<div class="company-panels">
+							<div class="use-case-images">
+								<img src="./images/accuweather.png" style="width:300px;">
+							</div>
+							<hr width="70%">
+							<div class="text-wrapper">
+								<p>Accuweather, founded in 1962, is among the oldest and most well-known commercial weather companies in the world, with 175,000 paying customers and mobile application users. Since 2014, GWC has provided weather forecasts that are used by Accuweather to advance the quality and accuracy of its forecast system.</p>
+							</div>
+							<hr width="70%">
+						</div>
+					</div>
+				</div>
+				<div class="getting-started">
+					<div class="getting-started-image"></div>
+					<div class="getting-started-panel">
+						<h1>Getting Started</h1>
+						<h3>GWC is focused on providing the most accurate weather forecast possible to its customers. In order to begin the process of understanding how we can best serve you, there are a few important things we need to know.</h3>
+						<div class="getting-started-button">
+							<h1>FIND OUT MORE</h1>
+						</div>
+					</div>	
+				</div>		
+				<div class="contact-us">
+					<div class="contact-flex-row">
+						<div class="contact-personal-info">
+							<div class="contact-info-phone">
+								<p style="height: 18.4px;"></p>
+								<p>PHONE</p>
+								<p>303-592-2061</p>
+							</div>
+							<div class="contact-address">
+								<p>OFFICE ADDRESS</p>
+								<p>3005 Sterling Circle, Suite 201</p>
+								<p>Boulder, CO 80301</p>
+							</div>
+						</div>
+						<div class="contact-forms">
+							<div class="contact-top-form">
+								<div class="contact-info-name">
+									<input class="w3-input" placeholder= "Name" type="text">
+									<input class="w3-input" placeholder="Email" type="text">
+
+								</div>
+								<div class="contact-info-message">
+									<label>Message:</label>
+									<textarea name="Message" rows="3"></textarea>
+								</div>
+							</div>
+							<div class="contact-bottom-form">
+								<div class="contact-send">
+									<button class="contact-send-button">SEND</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="map-of-office">
+						<div class="map-of-office-map">
+							<div class="map-office-text">
+								<span class="fa fa-map-marker"></span>
+								<p>See Map of Office Location</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer">
+					<div class="text-wrapper">
+						<p>© 2015-2017 GLOBAL WEATHER CORPORATION</p>
+						<p>All rights reserved.</p>
+						<p>POWERED BY MY WEB DEV GIRL</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+	<script
+	src="http://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
+	<script type="text/javascript" src="./javascript/app.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+	
+</html>

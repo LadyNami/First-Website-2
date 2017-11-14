@@ -1,0 +1,268 @@
+/*this is for tablets*/
+
+
+/*This is for phones*/
+
+
+@media only screen  and (max-width: 768px) {
+    .super-container {
+        width: 768px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .forecast {
+        width: 768px;
+        min-height: 400px;
+        margin-right: 80px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .worldmap-title {
+        font-size: 30px;
+    }    
+}
+@media only screen and (max-width: 768px) {
+    .our-service-button {
+        padding: 5px;
+        margin-bottom: 10px;
+    }    
+}
+@media only screen and (max-width: 768px) {
+    .who-we-are-image-container {
+        justify-content: center;
+        min-height: 170px;
+        
+    }    
+}
+@media only screen and (max-width: 768px) {
+    .who-we-are-image-container .image {
+    background-size: 95%;
+    
+    }
+}
+@media only screen and (max-width: 768px) {
+    .who-we-are-text h1 {
+    font-size: 60px;
+    
+    }
+}
+@media only screen and (max-width: 768px) {
+    .wx-panels-large {
+        min-width: 768px;
+        margin-bottom: 400px;
+        height: 300px;
+    }    
+}
+@media only screen and (max-width: 768px) {
+    .wx-panels-large .text-wrapper  {
+        margin-bottom: 50px
+    }    
+}
+@media only screen and (max-width: 768px) {
+    .text-wrapper p  {
+        font-size: 35px;
+        margin-bottom: 30px
+    }    
+}
+@media only screen and (max-width: 768px) {
+    .panel-sensor-image  {
+        margin: 35px;
+        height: 2000px;
+        background-size: 275px 105px;
+    }    
+}
+@media only screen and (max-width: 768px) {
+    .panel-point-image  {
+        margin-top: 50px;
+        height: 2000px;
+        background-size: 300px 125px;
+    }    
+}
+@media only screen and (max-width: 768px) {
+    .panel-road-image  {
+        margin: 25px;
+        background-size: 250px 100px;
+    }    
+}
+@media only screen and (max-width: 768px) {
+    .panel-wind-image  {
+        margin: 25px;
+        background-size: 250px 100px;
+    }    
+}
+@media only screen and (max-width: 768px) {
+    .panel-solar-image  {
+        margin: 25px;
+        background-size: 250px 100px;
+    }    
+}
+
+@media only screen and (max-width: 768px) {
+    .wx-panels-medium {
+        min-width: 768px;
+        margin-bottom: 50px;
+    }    
+}
+@media only screen and (max-width: 768px) {
+    .foundational-forecast-title h1 {
+    font-size: 60px;
+    margin-bottom: 40px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .company-panels {
+        min-width: 768px;
+    
+    }
+}
+@media only screen and (max-width: 768px) {
+    .company-panels .text-wrapper {
+        min-width: 768px;
+        text-align: center;
+        margin-top: 40px;
+    
+    }
+}
+@media only screen and (max-width: 768px) {
+    .panel-xcel-image {
+        margin: 25px;
+        background-size: 250px 100px;
+    }
+
+}
+@media only screen and (max-width: 768px) {
+    .panel-inrix-image {
+      margin: 25px;
+      background-size: 250px 100px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+    .use-case-images img {
+        height: 110px;
+        width: 300px;
+        
+  }
+}
+@media only screen and (max-width: 768px) {
+    .panel-accuweather-image {
+      margin: 25px;
+      background-size: 250px 100px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+    .getting-started-panel {
+      height: 600px;
+  }
+}
+@media only screen and (max-width: 768px) {
+    .getting-started-button {
+      margin-top: 300px;
+  }
+}
+@media only screen and (max-width: 768px) {
+    .getting-started h1 {
+      font-size: 40px;
+  }
+}
+@media only screen and (max-width: 768px) {
+    .getting-started h3 {
+      font-size: 35px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+    .contact-forms {
+        min-width: 375px;
+        min-height: 250px;
+        font-size: 30px;
+    }    
+}
+@media only screen and (max-width: 768px) {
+    .contact-info-phone {
+        padding-bottom: 20px;
+        font-size: 30px;
+    }    
+}
+@media only screen and (max-width: 768px) {
+    .contact-address {
+        padding-left: 150px;
+        padding-right: 60px;
+        padding-top: 32px;
+        font-size: 30px;
+    }    
+}
+@media only screen and (max-width: 768px) {
+    .contact-personal-info {
+        flex-direction: row;
+    }    
+}
+
+@media only screen and (max-width: 768px) {
+    .contact-info-message {
+        min-width: 20px;
+        min-height: 100px;
+        flex-direction: column;
+        margin-left: 250px;
+        font-size: 30px;
+    }    
+}
+
+@media only screen and (max-width: 768px) {
+    .contact-info-name {
+    justify-content: center;
+    width: 350px;
+    margin-left: 200px;
+    }    
+}
+
+@media only screen and (max-width: 768px) {
+    .contact-send button{
+        flex: .5;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 60px;
+        max-width: 100px;
+        text-align: -webkit-center;
+    }    
+}
+
+@media only screen and (max-width: 768px) {
+    .contact-flex-row {
+       flex-direction: column;
+    }    
+}
+@media only screen and (max-width: 768px) {
+    .contact-top-form {
+       flex-direction: column;
+       flex: .2;
+    }    
+}
+
+@media only screen and (max-width: 768px) {
+    .contact-info-message textarea {
+       flex: .2;
+       width: 250px;
+    }    
+}
+
+
+@media only screen and (min-width: 1024px) and (max-width: 1024px) {
+    .worldmap-flex {
+        min-width: 1024px;
+        min-height: 500px;
+    }    
+}
+@media only screen and (min-width: 1024px) and (max-width: 1024px) {
+    .forecast {
+        width: 880px;
+        min-height: 400px;
+    }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1024px) {
+    .forecast-image {
+        display: flex;
+        flex: 1;
+    }
+}

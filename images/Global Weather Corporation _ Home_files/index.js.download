@@ -1,0 +1,126 @@
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("scroll").style.display = "block";
+    } else {
+        document.getElementById("scroll").style.display = "none";
+    }
+}
+
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+//PDF Buttons Function
+function opacity() {
+    document.getElementById("pdfThumb").style.opacity = "0.4";
+}
+function opacityOff() {
+    document.getElementById("pdfThumb").style.opacity = "1";
+}
+
+/*jQuery(function(){
+  $('.monster').fadeIn('700');
+});
+
+$(document).ready(function() {
+    $(window).scroll( function(){
+        $('.hideme').each( function(i){
+            var bottom_of_object = $(this).position().top + 2000;
+            var bottom_of_window = $(window).scrollTop() + 2600;
+            var windowWidth = window.innerWidth;
+            if( bottom_of_window > bottom_of_object && windowWidth > 991){
+                $(this).css({'opacity':'0'});
+                $(this).animate({'opacity':'1'},750);
+            }else if ( bottom_of_window > bottom_of_object && windowWidth < 991 && windowWidth > 1400) {
+                $(this).css({'opacity':'1'});
+            }
+        });
+    });
+});*/
+
+
+//Map Marker
+window.onload = function(){
+    $('.contain-the-marker').click(function (ev) {
+        		$(".marker").remove();
+            $(".contain-the-marker").append(
+                $('<div class="marker"></div>').css({
+                    position: 'absolute',
+                    top: ev.pageY - 5 + 'px',
+                    left: ev.pageX - 5 + 'px',
+                    width: '10px',
+                    height: '10px',
+                    opacity: '1',
+                    background: '#3BB9FF'
+                })
+            );
+    });
+};
+
+$("#pointer_div").click(function(){
+    $("#boulder").hide();
+});
+
+
+//Google Map
+$( ".map-btn" ).click(function() {
+  $( ".google-maps" ).toggle("slow");
+});
+
+//Contact Form
+$(function() {
+
+	// Get the form.
+	var form = $('#contactform');
+
+	// Get the messages div.
+	var formMessages = $('#form-messages');
+
+	// Set up an event listener for the contact form.
+	$(form).submit(function(e) {
+		// Stop the browser from submitting the form.
+		e.preventDefault();
+
+		// Serialize the form data.
+		var formData = $(form).serialize();
+
+		// Submit the form using AJAX.
+		$.ajax({
+			type: 'POST',
+			url: $(form).attr('action'),
+			data: formData
+		})
+		.done(function(response) {
+			// Make sure that the formMessages div has the 'success' class.
+			$(formMessages).removeClass('error');
+			$(formMessages).addClass('success');
+
+			// Set the message text.
+			$(formMessages).text(response);
+
+			// Clear the form.
+			$('#name').val('');
+			$('#email').val('');
+			$('#message').val('');
+		})
+		.fail(function(data) {
+			// Make sure that the formMessages div has the 'error' class.
+			$(formMessages).removeClass('success');
+			$(formMessages).addClass('error');
+
+			// Set the message text.
+			if (data.responseText !== '') {
+				$(formMessages).text(data.responseText);
+			} else {
+				$(formMessages).text('Oops! An error occured and your message could not be sent.');
+			}
+		});
+
+	});
+
+});
