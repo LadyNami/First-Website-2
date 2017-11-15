@@ -88,52 +88,42 @@
 					<div class="forecast-image">
 						<div class="forecast">
 							<input id="metric-or-imperial" style="display: none" value="imperial">
+							<div style="margin-top: 50px;">
 							<div class="forecast-container">
 								24 HOUR FORECAST
 							</div>
-							<div class="inner-forecast-container">
-								<div class="left-forecast-container">
-									<div id="latitude-reader">
-										lat:
-									</div>
-								</div>
-								<div class="right-forecast-container">
-									<div id="longitude-reader">
-										long:
-									</div>
-								</div>
 							</div>
-							<div class="forecast-container">
-									CURRENT CONDITIONS
-								</div>
-							<div class="inner-forecast-container">
-								<div id="weather-forecast-id"></div>
-							</div>
-							<div class="inner-forecast-container">
-								<div class="left-forecast-container">
-									<div id="high-temperature"></div>
-								</div>
-								<div class="right-forecast-container">
+							<div class="temperature-container">
+								<div class="temp-forecast-container">
+									<div style="color: #ff6666;">
 									<div id="temp-type-high">C HI</div>
+									</div>
 								</div>
-							</div>
-							<div class="inner-forecast-container">
-								<div class="left-forecast-container">
-									<div id="low-temperature"></div>
-								</div>
-								<div class="right-forecast-container">
+								<div class="temp-forecast-container">
+									<div style="color:#3BB9FF;">
 									<div id="temp-type-low"> C LO</div>
+									</div>
 								</div>
 							</div>
+							<div style="max-height: 50px; margin-bottom: 50px;">
 							<div class="inner-forecast-container">
 								<div class="left-forecast-container">
 									<div id="precipitation"></div>
 								</div>
 								<div class="right-forecast-container">
-									% precip
+									% chance precipitation
+								</div>
+							</div>	
+							</div>
+							<div class="forecast-container">
+									CURRENT CONDITIONS
+								</div>
+							<div class="current-conditions-container">
+								<div class="hightemp-forecast-container">
+									<div id="temp-type-high">C HI</div>
 								</div>
 							</div>
-							<div class="inner-forecast-container">
+							<div class="current-conditions-container">
 								<div class="left-forecast-container">
 									<div id="wind-speed"></div>
 								</div>
@@ -141,6 +131,32 @@
 									<div id="wind-speed-type">KPH wind</div>
 								</div>
 							</div>
+							<div class="current-conditions-container">
+								<div id="weather-forecast-id">
+									I will be "Sunny Windy"
+								</div>
+							</div>
+							<div style="margin-top: 50px">
+							<div class="location-forecast-container">
+							<div style="margin-left: 170px;">
+								<div class="left-forecast-container">
+									<div id="latitude-reader">
+										lat:
+									</div>
+								</div>
+							</div>	
+							<div class="right-forecast-container">
+								<div id="longitude-reader">
+									long:
+								</div>
+							</div>	
+							</div>
+							</div>
+							<div class="location-forecast-container">
+									<div id="weather-forecast-id">
+										I will be "Random Address"
+									</div>
+								</div>
 							<div class="inner-forecast-container">
 								<div id="convert-to-button" onclick="changeImperialOrMetric()">Convert to Imperial</div>
 							</div>
